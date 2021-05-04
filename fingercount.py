@@ -2,6 +2,8 @@
 import cv2
 import numpy as np
 import math
+import pyautogui
+import time
 cap = cv2.VideoCapture(0)
 c = 0
 upper_left = (0, 0)
@@ -52,6 +54,10 @@ while True:
             cv2.circle(image, far, 4, [0, 0, 255], -1)
         
     cnt+=1
+    if cnt==2:
+        pyautogui.press('space')
+        time.sleep(3)
+        print("space pressed")
     cv2.putText(image, str(cnt), (0, 50), cv2.FONT_HERSHEY_SIMPLEX,1, (255, 0, 0) , 2, cv2.LINE_AA)
     cv2.imshow('final_result',image)
     # Show the image
@@ -63,3 +69,4 @@ while True:
 
 cv2.destroyAllWindows()
 cap.release()
+
