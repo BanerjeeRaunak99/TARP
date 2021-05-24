@@ -57,7 +57,19 @@ while True:
     if cnt==2:
         pyautogui.press('space')
         time.sleep(3)
-        print("space pressed")
+        print("play/pause")
+    if cnt==4:
+        pyautogui.press('f')
+        print("fullscreen")
+        time.sleep(3)
+    if cnt==3:
+        pyautogui.press('volumeup')
+        print("volume up")
+        time.sleep(2)
+    if cnt==5:
+        pyautogui.press('volumedown')
+        print("volume down")
+        time.sleep(2)
     cv2.putText(image, str(cnt), (0, 50), cv2.FONT_HERSHEY_SIMPLEX,1, (255, 0, 0) , 2, cv2.LINE_AA)
     cv2.imshow('final_result',image)
     # Show the image
@@ -69,4 +81,3 @@ while True:
 
 cv2.destroyAllWindows()
 cap.release()
-
